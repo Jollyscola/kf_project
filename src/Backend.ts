@@ -9,7 +9,8 @@ export class Backend{
         console.log("connected "+success);  
     }
 
-    public static async getStudents(event_name:string){
+    public static async getStudents(event_name:string)
+    {
         let filter:Filter = Filters.Equals("event_name" , event_name);
         let table:Table = new Table(Backend.session,"CoursestudentsDS");
         let cursor:Cursor = await table.select("*",new FilterGroup(filter));
